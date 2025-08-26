@@ -1,0 +1,137 @@
+# ============================
+# Programa 1: Búsqueda en Matriz 3x3
+# ============================
+
+def buscar_en_matriz(matriz, valor):
+    """
+    Busca un valor en una matriz bidimensional.
+    :param matriz: Lista de listas (matriz).
+    :param valor: Valor a buscar.
+    :return: Tupla (fila, columna) si se encuentra, None si no.
+    """
+    for i, fila in enumerate(matriz):
+        for j, elemento in enumerate(fila):
+            if elemento == valor:
+                return i, j
+    return None
+
+
+# Definimos una matriz 3x3
+matriz = [
+    [12, 7, 5],
+    [9, 15, 3],
+    [4, 8, 11]
+]
+
+# Valor a buscar
+valor_buscado = 15
+
+print("=== MATRIZ ===")
+for fila in matriz:
+    print(fila)
+
+# Llamamos a la función de búsqueda
+posicion = buscar_en_matriz(matriz, valor_buscado)
+
+# Resultado
+if posicion:
+    print(f"\n✅ Valor {valor_buscado} encontrado en la posición (fila={posicion[0]}, columna={posicion[1]}).")
+else:
+    print(f"\n❌ Valor {valor_buscado} NO encontrado en la matriz.")
+
+
+
+# ============================
+# Programa 2: Ordenar una fila de la Matriz
+# ============================
+
+def bubble_sort(lista):
+    """
+    Ordena una lista usando Bubble Sort.
+    :param lista: Lista de números.
+    :return: Lista ordenada.
+    """
+    n = len(lista)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if lista[j] > lista[j + 1]:
+                lista[j], lista[j + 1] = lista[j + 1], lista[j]
+    return lista
+
+
+def ordenar_fila_matriz(matriz, fila):
+    """
+    Ordena una fila específica de una matriz.
+    :param matriz: Lista de listas (matriz).
+    :param fila: Índice de la fila a ordenar.
+    :return: Matriz con la fila ordenada.
+    """
+    matriz[fila] = bubble_sort(matriz[fila])
+    return matriz
+
+
+# Definimos una matriz 3x3
+matriz = [
+    [10, 2, 7],
+    [5, 12, 1],
+    [8, 3, 9]
+]
+
+# Fila a ordenar (0 primera fila, 1 segunda, etc.)
+fila_a_ordenar = 1
+
+print("=== MATRIZ ORIGINAL ===")
+for fila in matriz:
+    print(fila)
+
+# Ordenamos la fila seleccionada
+matriz_ordenada = ordenar_fila_matriz(matriz, fila_a_ordenar)
+
+print("\n=== MATRIZ CON LA FILA ORDENADA ===")
+for fila in matriz_ordenada:
+    print(fila)
+# 🔍 Programación en Python: Búsqueda y Ordenación en Arreglos Multidimensionales
+
+Este repositorio contiene dos programas en **Python** que demuestran el uso de algoritmos de **búsqueda** y **ordenación** en matrices bidimensionales.
+
+---
+
+## 📂 Contenido del Repositorio
+
+| Archivo                | Descripción                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `busqueda_matriz.py`   | Busca un valor específico en una matriz 3x3 y muestra su posición si existe.|
+| `ordenacion_fila.py`   | Ordena una fila específica de una matriz 3x3 utilizando **Bubble Sort**.    |
+
+---
+
+## 🚀 Ejecución de los Programas
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Johao2015/Jaren2025.git
+   cd Busqueda_Ordenacion
+   ```
+
+2. Ejecuta los programas:
+   ```bash
+   python busqueda_matriz.py
+   python ordenacion_fila.py
+   ```
+
+---
+
+## 📸 Capturas
+
+![Ejecución búsqueda](img/busqueda.png)
+![Ejecución ordenación](img/ordenacion.png)
+
+---
+
+## 🏆 Créditos
+
+- Autor: **Johao2015**
+- Lenguaje: **Python 3**
+- IDE: **PyCharm**
+- Control de versiones: **Git & GitHub**
+
